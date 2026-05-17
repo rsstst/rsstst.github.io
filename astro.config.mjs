@@ -7,6 +7,7 @@ import swup from '@swup/astro';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://rsstst.github.io',
   trailingSlash: 'never',
   vite: {
     plugins: [tailwindcss()]
