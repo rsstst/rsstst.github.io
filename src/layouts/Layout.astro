@@ -14,10 +14,12 @@ import Navbar from '../components/Navbar.astro';
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<div class="flex h-screen flex-row overflow-hidden">
 		<Navbar />
-		<main class="transition-fade flex flex-col items-center justify-center w-[90vw] m-auto">
+		<main class="transition-fade flex h-full flex-1 flex-col ">
 			<slot />
 		</main>
+		</div>
 	</body>
 </html>
 
@@ -31,5 +33,6 @@ import Navbar from '../components/Navbar.astro';
 
 	body {
 		padding: 12px;
+		overflow: hidden;
 	}
 </style>

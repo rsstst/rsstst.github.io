@@ -1,10 +1,26 @@
-<div class="flex flex-col">
-    <div class="flex flex-col items-center gap-2">
-        <hr class="w-1/4 border border-t-accessory" />
-        <div class="flex flex-row gap-8 font-bold">
-            <a href="/">Home</a>
-            <a href="/contact">Contact</a>
-        </div>
-        <hr class="w-1/4 border border-t-accessory" />
-    </div>
+---
+const pathname = Astro.url.pathname;
+---
+
+<div class="flex h-full w-72 shrink-0 flex-col overflow-y-auto bg-inherit/50 border border-suisei p-8 rounded-lg shadow-md">
+    <nav class="flex flex-col gap-4">
+        <h1 class="text-2xl font-semibold">Welcome</h1>
+        <a href="/" class:list={["transition-colors duration-300", pathname === "/" ? "text-suisei" : "text-gray-300 hover:text-suisei"]} data-nav-link>Home</a>
+        <a href="/contact" class:list={["transition-colors duration-300", pathname === "/contact" ? "text-suisei" : "text-gray-300 hover:text-suisei"]} data-nav-link>Contact</a>
+    </nav>
 </div>
+
+<script is:inline>
+    const setActiveLink = () => {
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('[data-nav-link]').forEach((link) => {
+            const isActive = new URL(link.href).pathname === currentPath;
+            link.classList.toggle('text-suisei', isActive);
+            link.classList.toggle('text-gray-300', !isActive);
+            link.classList.toggle('hover:text-suisei', !isActive);
+        });
+    };
+
+    setActiveLink();
+    document.addEventListener('astro:page-load', setActiveLink);
+</script>
