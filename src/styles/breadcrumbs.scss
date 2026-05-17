@@ -1,0 +1,12 @@
+$primary: #0A0E17;
+$text: #E2E8F0;
+$surface: #1A202C;
+$suisei: #75B7EA;
+$accessory: #F2EDBA;
+$highlight: #BD79E3;
+
+@use "astro-breadcrumbs/breadcrumbs.scss" with (
+    $overflow-behavior: "ellipsis",
+    $color-hover-link: $suisei,
+    $color-is-current: $accessory,
+);
