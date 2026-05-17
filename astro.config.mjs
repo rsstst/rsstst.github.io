@@ -13,6 +13,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [mdx(), swup({
-  })],
+  integrations: [mdx(), swup({})],
 });
