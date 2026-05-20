@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+
+import Layout from "../../layouts/Layout.astro";
+import TitleBar from "../../components/TitleBar.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => {
+    return {
+      params: { id: project.id },
+      props: { project },
+    };
+  });
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project)
+---
+
+<Layout>
+  <TitleBar title={project.data.title} />
+<section class="flex min-h-[70vh] items-center justify-center p-8">
+	<div class="flex flex-col w-1/2 items-center text-center border border-accessory rounded-lg p-8">
+		<Image src={project.data.img} inferSize alt={project.data.title} class="mb-4 h-auto w-64 rounded-lg shadow-md" />
+		<div class="max-w-prose text-justify text-gray-300">
+      <Content />
+		</div>
+	</div>
+</section>
+</Layout>

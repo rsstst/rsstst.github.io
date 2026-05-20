@@ -1,17 +1,22 @@
 ---
-const { projectTitle, projectImage, projectImageAlt, projectUrl, projectDate } = Astro.props;
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    projects: CollectionEntry<'projects'>
+}
+const { projects } = Astro.props;
 ---
 
 <section>
     <div class="text-center flex flex-col items-center justify-center p-8 rounded-lg shadow-md bg-inherit/50 border border-suisei">
-        <a href={projectUrl}>
+        <a href={`/project/${projects.id}`}>
             <img
-                src={projectImage}
-                alt={projectImageAlt}
+                src={projects.data.img.src}
+                alt={projects.data.title}
                 class="w-full h-auto rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
             />
         </a>
-        <h2 class="text-white font-bold mt-4">{projectTitle}</h2>
-        <p class="text-gray-300 text-sm">{projectDate}</p>
+        <h2 class="text-white font-bold mt-4">{projects.data.title}</h2>
+        <p class="text-gray-300 text-sm">date</p>
     </div>
 </section>
