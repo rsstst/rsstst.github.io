@@ -13,26 +13,12 @@ import Navbar from '../components/Navbar.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>{Astro.props.title || "Portfolio"}</title>
 	</head>
-	<body>
+	<body class="overflow-hidden">
 		<div class="flex h-screen flex-row overflow-hidden">
 		<Navbar />
-		<main class="transition-fade flex h-full flex-1 flex-col ">
+		<main class="transition-fade flex h-full min-h-0 flex-1 flex-col overflow-y-auto">
 			<slot />
 		</main>
 		</div>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		min-height: 100%;
-	}
-
-	body {
-		padding: 12px;
-		overflow: hidden;
-	}
-</style>

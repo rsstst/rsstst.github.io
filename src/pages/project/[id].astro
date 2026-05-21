@@ -22,12 +22,12 @@ const { Content } = await render(project)
 
 <Layout>
   <TitleBar title={project.data.title} />
-<section class="flex min-h-[70vh] items-center justify-center p-8">
-	<div class="flex flex-col w-1/2 items-center text-center border border-accessory rounded-lg p-8">
-		<Image src={project.data.img} inferSize alt={project.data.title} class="mb-4 h-auto w-64 rounded-lg shadow-md" />
-		<div class="max-w-prose text-justify text-gray-300">
+  <section class="flex items-start justify-center p-4">
+  <div class="flex w-full max-w-2xl flex-col items-center rounded-lg border border-accessory p-8 text-center">
+    <Image src={project.data.img} inferSize alt={project.data.title} class="mb-4 h-auto w-64 rounded-lg shadow-md" />
+    <div class="max-w-prose text-justify text-gray-300">
       <Content />
-		</div>
-	</div>
-</section>
+    </div>
+  </div>
+  </section>
 </Layout>

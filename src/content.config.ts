@@ -1,5 +1,4 @@
 import { glob } from "astro/loaders";
-import { imageConfig } from "astro:assets";
 import { defineCollection } from "astro:content";
 import { z } from "zod";
 
@@ -9,6 +8,7 @@ const projects = defineCollection({
     title: z.string(),
     description: z.string(),
     img: image(),
+    date: z.date(),
   }),
 });
 
