@@ -4,16 +4,19 @@ import Layout from "../layouts/Layout.astro";
 import TitleBar from "../components/TitleBar.astro";
 import { getCollection } from "astro:content";
 
-const project = await getCollection("projects");
+const projects = (await getCollection("projects")).sort((a, b) =>
+  // sort descending by date in each project's frontmatter
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
 <Layout title="Projects">
   <div>
     <TitleBar title="Projects" />
     <section class="grid grid-cols-3 gap-4 p-8">
-      {project.map((project) => (
+        {projects.map((project) => (
           <Project projects={project} />
-      ))}
+        ))}
     </section>
   </div>
 </Layout>

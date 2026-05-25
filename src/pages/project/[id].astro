@@ -24,7 +24,9 @@ const { Content } = await render(project)
   <TitleBar title={project.data.title} />
   <section class="flex items-start justify-center p-4">
   <div class="flex w-full max-w-2xl flex-col items-center rounded-lg border border-accessory p-8 text-center">
-    <Image src={project.data.img} inferSize alt={project.data.title} class="mb-4 h-auto w-64 rounded-lg shadow-md" />
+    <Image src={project.data.img} inferSize alt={project.data.title} class="mb-4 h-auto w-5xl rounded-lg shadow-md" />
+    <a href={project.data.src} class="text-sm text-accessory mb-4 hover:underline hover:cursor-pointer" target="_blank" rel="noopener noreferrer">
+      Visit Project </a>
     <div class="max-w-prose text-justify text-gray-300">
       <Content />
     </div>

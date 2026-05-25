@@ -13,7 +13,7 @@ const { projects } = Astro.props;
             <img
                 src={projects.data.img.src}
                 alt={projects.data.title}
-                class="h-48 w-fit rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300"
+                class="h-48 w-fit rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 overflow-hidden"
             />
         </a>
         <h2 class="text-white font-bold mt-4">{projects.data.title}</h2>
