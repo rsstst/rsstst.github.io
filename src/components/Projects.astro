@@ -1,0 +1,108 @@
+---
+import { Icon } from "astro-icon/components";
+
+import bbc from "@assets/projects/bbc-2026.webp";
+import bicbatt from "@assets/projects/bicbatt-2026.webp";
+import icjam from "@assets/projects/icjam-2026.webp";
+import jesica from "@assets/projects/jesica-2026.webp";
+import jtd from "@assets/projects/jendela-tekno-dunia.webp";
+import pcCorpo from "@assets/projects/pc-corpo.webp";
+import eduventure from "@assets/projects/eduventure.webp";
+
+const projects = [
+  {
+    img: icjam,
+    title: "ICJAM 2026",
+    description:
+      "A static website developed for an international conference event in Universitas Brawijaya. Implementing GSAP Library to create animations and transitions on the website.",
+    url: "https://icjam2026.org/",
+    tech: ["Vite", "React", "Tailwind CSS", "GSAP Library"],
+  },
+  {
+    img: jesica,
+    title: "JESICA 2026",
+    description:
+      "A static website developed for an international conference event in Universitas Pembangunan Nasional Veteran Jakarta. Implementing GSAP Library to create animations and transitions on the website.",
+    url: "https://jesica-upnvj.org/",
+    tech: ["Vite", "React", "Tailwind CSS", "GSAP Library"],
+  },
+  {
+    img: bbc,
+    title: "BBC 2026",
+    description:
+      "A static website developed for an international conference event in Universitas Esa Unggul. Implementing GSAP Library to create animations and transitions on the website.",
+    url: "https://bbc-2026.id/",
+    tech: ["Vite", "React", "Tailwind CSS", "GSAP Library"],
+  },
+  {
+    img: bicbatt,
+    title: "BICBATT 2026",
+    description:
+      "A static website developed for an international conference event in Universitas Brawijaya.",
+    url: "https://bicbatt.org/",
+    tech: ["Vite", "React", "Tailwind CSS"],
+  },
+  {
+    img: jtd,
+    title: "Jendela Tekno Dunia",
+    description:
+      "Developed a news portal website using Next.JS, React, and TailwindCSS. Integrating Strapi using REST API to manage the content of the website.",
+    url: "https://github.com/rsstst/winni-web",
+    tech: ["Next.JS", "React", "Tailwind CSS", "REST API"],
+  },
+  {
+    img: pcCorpo,
+    title: "PC Corpo",
+    description:
+      "A project created to complete college assignments. Developed an e-commerce website with dynamic content and integrated dashboard for adding new items with basic CRUD.",
+    url: "https://github.com/rsstst/pc_corpo",
+    tech: ["Django", "Tailwind CSS"],
+  },
+  {
+    img: eduventure,
+    title: "Eduventure",
+    description:
+      "Developed an educational roblox games and implements adaptive learning techniques to enhance the learning experience for players.",
+    url: "https://youtu.be/AL_ec8HSHOw",
+    tech: ["Roblox Studio", "Luau"],
+  },
+];
+---
+
+<div id="projects" class="w-2xl scroll-mt-24">
+  <div class="flex flex-col text-justify">
+    <h2 class="text-3xl font-bold">Projects</h2>
+    <span class="border border-t w-full" />
+    <br />
+    <div class="flex flex-col gap-8">
+      {projects.map((project) => (
+        <div class="flex flex-row gap-8">
+          <img
+            class="h-80 rounded-lg"
+            src={typeof project.img === "string" ? project.img : project.img.src}
+            alt=""
+          />
+          <div class="h-48 flex flex-col gap-2">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-fit text-2xl font-bold transition-[gap] duration-300 ease-in-out flex flex-row items-center gap-4 hover:gap-8"
+            >
+              {project.title}
+              <Icon name="right-arrow" class="h-6" />
+            </a>
+            <p class="text-justify">{project.description}</p>
+            <div class="mt-auto flex flex-row gap-2">
+              {project.tech.map((tech) => (
+                <p class="border border-tmuted text-tmuted p-1 text-sm rounded-lg">
+                  {tech}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

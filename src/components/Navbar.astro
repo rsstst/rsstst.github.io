@@ -1,0 +1,35 @@
+<div class="navbar fixed inset-x-0 top-0 z-50">
+  <div class="flex flex-row justify-end items-center h-16 p-8">
+    <div class="flex flex-row gap-4">
+      <a href="#about">About</a>
+      <a href="#experience">Experiences</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const navbar = document.querySelector(".navbar");
+
+  const updateNavbar = () => {
+    navbar?.classList.toggle("scrolled", window.scrollY > 0);
+  };
+
+  updateNavbar();
+  window.addEventListener("scroll", updateNavbar, { passive: true });
+</script>
+
+<style>
+  .navbar {
+    background-color: var(--color-primary);
+    transition:
+      background-color 300ms ease,
+      box-shadow 300ms ease;
+  }
+
+  .navbar.scrolled {
+    background-color: var(--color-secondary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>

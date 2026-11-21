@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+
+const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "PHP", "Python", "Laravel", "Next.JS", "Tailwind", "React", "Django", "Hardware Diagnostics", "Tech Troubleshoot"
+];
+---
+
+<div id="skills" class="w-2xl scroll-mt-24">
+  <div class="flex flex-col text-justify">
+    <h2 class="text-3xl font-bold self-end">Skills</h2>
+    <span class="border border-t w-full" />
+    <br />
+    <div class="flex flex-row gap-2 flex-wrap">
+      {skills.map((skill) => (
+        <>
+          <p class="">{skill}</p>
+        </>
+      ))}
+    </div>
+  </div>
+</div>

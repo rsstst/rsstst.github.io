@@ -1,0 +1,42 @@
+---
+const experience = [
+  {
+    title: "Frontend Developer",
+    company: "Freelance",
+    date: "08/2026 - Present",
+  },
+  {
+    title: "Fullstack Developer Intern",
+    company: "PT. Winnicode Garuda Teknologi",
+    date: "03/2025 - 09/2025",
+  },
+  {
+    title: "IT Support",
+    company: "AND Cellular",
+    date: "01/2018 - 09/2022",
+  },
+];
+---
+
+<div id="experience" class="w-2xl scroll-mt-24">
+  <div class="flex flex-col text-justify">
+    <h2 class="text-3xl font-bold self-end">Experience</h2>
+    <span class="border border-t w-full" />
+    <br />
+    <div class="flex flex-col gap-4">
+      {experience.map((item) => (
+        <div class="flex flex-col gap-2 mt-4">
+          <div class="flex flex-row justify-between">
+            <h3 class="text-xl font-bold">{item.title}</h3>
+            <p class="text-sm">{item.date}</p>
+          </div>
+          <p class="text-sm">{item.company}</p>
+        </div>
+      ))}
+    </div>
+    <br />
+    <a href="https://drive.google.com/file/d/1najoKOwI-mVHiRirpCuIu1DM2mYSIxU-/view?usp=sharing" class="w-fit mt-8 text-lg hover:underline">
+      Full Resume
+    </a>
+  </div>
+</div>
