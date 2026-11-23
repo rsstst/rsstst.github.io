@@ -18,5 +18,10 @@
     color: var(--color-tmain);
     font-family: "Poppins", sans-serif;
     margin: 0;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
